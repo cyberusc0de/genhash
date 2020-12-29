@@ -1,7 +1,7 @@
 ## genhash
 Developed by @zidelnet 
 
-This tool was designed to test web application using a weak hashing algorithm in order to brute forcing password during a web application penetration test. It is always to good practice to salt user's password. A good hashing algorithm is not good enough.
+This tool was designed to test web application using a weak hashing algorithm in order to brute forcing password during a web application penetration test. It is always to good practice to salt user's password before storing them in the database.
 
 NOTE: Ensure to use python3 
 ``` 
