@@ -17,6 +17,30 @@ def convert_to_sha1(x):
 	sha1_hash = hash_object.hexdigest() 
 	return sha1_hash
 
+# function to convert values to sha224 hash 
+def convert_to_sha224(x): 
+	hash_object = hashlib.sha224(x.encode())
+	sha224_hash = hash_object.hexdigest() 
+	return sha224_hash
+
+# function to convert values to sha256 hash 
+def convert_to_sha256(x): 
+	hash_object = hashlib.sha256(x.encode())
+	sha256_hash = hash_object.hexdigest() 
+	return sha256_hash
+
+# function to convert values to sha384 hash 
+def convert_to_sha384(x): 
+	hash_object = hashlib.sha384(x.encode())
+	sha384_hash = hash_object.hexdigest() 
+	return sha384_hash
+
+# function to convert values to sha512 hash 
+def convert_to_sha512(x): 
+	hash_object = hashlib.sha512(x.encode())
+	sha512_hash = hash_object.hexdigest() 
+	return sha512_hash
+
 # code banner 
 def banner(): 
 	print("""
@@ -95,6 +119,22 @@ try:
 	if selected_hash == 'sha1': 
 		# convert the generated sequencial numbers into sha1 hash 
 		hash_list = [convert_to_sha1(str(i)) for i in number_list]
+	
+	if selected_hash == 'sha224': 
+		# convert the generated sequencial numbers into sha224 hash 
+		hash_list = [convert_to_sha224(str(i)) for i in number_list]
+	
+	if selected_hash == 'sha256': 
+		# convert the generated sequencial numbers into sha256 hash 
+		hash_list = [convert_to_sha256(str(i)) for i in number_list]
+	
+	if selected_hash == 'sha384': 
+		# convert the generated sequencial numbers into sha384 hash 
+		hash_list = [convert_to_sha384(str(i)) for i in number_list]
+	
+	if selected_hash == 'sha512': 
+		# convert the generated sequencial numbers into sha512 hash 
+		hash_list = [convert_to_sha512(str(i)) for i in number_list]
 
 	# convert both list into a dictionary 
 	full_list = {hash_list[i]:number_list[i] for i in range(len(number_list))}
