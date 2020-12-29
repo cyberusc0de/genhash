@@ -63,13 +63,13 @@ if args.hash:
 	if args.hash not in hash_list_available:
 		print("[!] The hash selected is not available")
 		sys.exit() 
-	selected_hash = args.hash 
+	selected_hash = (args.hash).lower()
 
 if args.start:  
-	start_ = args.start 
+	START_ = args.start 
 
 if args.end: 
-	end_ = args.end 
+	END_ = args.end 
 
 
 # function to convert values to md5 hash 
@@ -77,4 +77,36 @@ def convert_to_md5(x):
 	hash_object = hashlib.md5(x.encode())
 	md5_hash = hash_object.hexdigest() 
 	return md5_hash
-	
+
+# function to convert values to sha1 hash 
+def convert_to_sha1(x): 
+	hash_object = hashlib.sha1(x.encode())
+	sha1_hash = hash_object.hexdigest() 
+	return sha1_hash
+
+# generate sequencial numbers 
+number_list = list(range(START_, END_,1))
+
+if selected_hash == 'md5': 
+	# convert the generated sequencial numbers into md5 hash 
+	hash_list = [convert_to_md5(str(i)) for i in number_list]
+
+if selected_hash == 'sha1': 
+	# convert the generated sequencial numbers into md5 hash 
+	hash_list = [convert_to_md5(str(i)) for i in number_list]
+
+# convert both list into a dictionary 
+full_list = {hash_list[i]:number_list[i] for i in range(len(number_list))}
+
+print(f"[+] {selected_hash}-list.txt created containing only the {selected_hash} Hash")
+print(f"[+] full-list.txt created containing both the {selected_hash} Hash the corresponding string value")
+
+# write the md5 hash list into a file 
+with open(selected_hash+"-list.txt","w") as f: 
+	for i in hash_list: 
+		f.write(i+"\n")
+
+#write the full-list into a file 
+with open("full-list.txt","w") as f: 
+	for i,j in full_list.items(): 
+		f.write("{} : {}\n".format(i,j))
