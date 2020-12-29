@@ -1,7 +1,7 @@
 ## genhash
 Developed by @zidelnet 
 
-This tool was designed to test web application using a weak hashing algorithm in order to brute forcing password during a web application attack. It is always to good practice to salt user's password. A good hashing algorithm is not good enough.
+This tool was designed to test web application using a weak hashing algorithm in order to brute forcing password during a web application penetration test. It is always to good practice to salt user's password. A good hashing algorithm is not good enough.
 
 NOTE: Ensure to use python3 
 ``` 
@@ -34,3 +34,5 @@ optional arguments:
   --start START               the start value of the generator 
   --end END                   the end value of the generator 
 ```
+
+The full-list.txt consist of the hashes and the corresponding value, there is no need to crack the hash again. The other wordlist can be used for the brute forcing. 
