@@ -92,8 +92,8 @@ if selected_hash == 'md5':
 	hash_list = [convert_to_md5(str(i)) for i in number_list]
 
 if selected_hash == 'sha1': 
-	# convert the generated sequencial numbers into md5 hash 
-	hash_list = [convert_to_md5(str(i)) for i in number_list]
+	# convert the generated sequencial numbers into sha1 hash 
+	hash_list = [convert_to_sha1(str(i)) for i in number_list]
 
 # convert both list into a dictionary 
 full_list = {hash_list[i]:number_list[i] for i in range(len(number_list))}
