@@ -3,6 +3,8 @@ Developed by @zidelnet
 
 This tool was designed to test web application using only hashing algorithm in order to brute forcing password during a web application penetration test. It is a good practice to salt user's password before storing them in the database.
 
+It can generate different hashes and plain wordlist to brute-force OTP and password during a web application attack
+
 NOTE: Ensure to use python3 
 ``` 
 $ git clone https://github.com/zidelnet/genhash.git
@@ -24,6 +26,7 @@ $ python genhash.py -h
 ------------------------------------------------------
 Sample Example: Generate MD5 Hash wordlist 
 $ python genhash.py --hash MD5 --start 1111 --end 9999
+$ python genhash.py --hash SHA256 --start 1111 --end 5555
 ```
 ```
 optional arguments: 
@@ -31,8 +34,10 @@ optional arguments:
   -v, --version               show program version 
   -L, --list                  show available hash
   --hash HASH                 set the hash type 
-  --start START               the start value of the generator 
-  --end END                   the end value of the generator 
+  --start START               the start value of the wordlist 
+  --end END                   the end value of the wordlist 
 ```
-
-The full-list.txt consist of the hashes and the corresponding value, there is no need to crack the hash again. The other wordlist can be used for the brute forcing. 
+The tool generates three files 
+1. *-clear-text-list.txt: Clear text generated wordlist that can be used to brute-force OTP and password  
+2. *-list.txt: The hashed wordlist that can also be used to brute-force OTP and password 
+3. *-full-list.txt: A full list consisting the hashes selected and the corresponding value, there is no need to crack the hash again. 
