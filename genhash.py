@@ -59,6 +59,7 @@ banner()
 print("""
 Sample Example: Generate MD5 Hash wordlist 
 # python genhash.py --hash MD5 --start 1111 --end 9999
+# python genhash.py --hash SHA256 --start 1111 --end 5555
 """)
 
 # Define the program description 
