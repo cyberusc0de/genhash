@@ -110,7 +110,7 @@ if args.end:
 
 try: 
 	# generate sequencial numbers 
-	number_list = list(range(START_, END_,1))
+	number_list = list(range(START_, END_+1,1))
 
 	if selected_hash == 'md5': 
 		# convert the generated sequencial numbers into md5 hash 
