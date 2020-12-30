@@ -63,15 +63,15 @@ Sample Example: Generate MD5 Hash wordlist
 """)
 
 # Define the program description 
-text = "Generate hashed wordlist for brute forcing password during a web application attack"
+text = "Generate hashed and plain wordlist to brute-force OTP and password during a web application attack"
 
 # Initiate the parser with a description 
 parser = argparse.ArgumentParser(description=text)
 parser.add_argument("-V", "--version", help="show program version", action="store_true")
 parser.add_argument("-L", "--list", help="show available hash", action="store_true")
 parser.add_argument("--hash", help="set the hash type")
-parser.add_argument("--start", type=int, help="the start value of the generator")
-parser.add_argument("--end", type=int, help="the end value of the generator")
+parser.add_argument("--start", type=int, help="the start value of the wordlist")
+parser.add_argument("--end", type=int, help="the end value of the wordlist")
 
 # Read arguments from the command line
 args = parser.parse_args()
@@ -140,8 +140,14 @@ try:
 	# convert both list into a dictionary 
 	full_list = {hash_list[i]:number_list[i] for i in range(len(number_list))}
 
-	print(f"[+] {selected_hash}-list.txt created containing only the {selected_hash} Hash")
-	print(f"[+] full-list.txt created containing both the {selected_hash} Hash the corresponding string value")
+	print(f"[+] {selected_hash}-clear-text-list.txt successfully created, containing only the clear text")
+	print(f"[+] {selected_hash}-list.txt successfully created, containing only the {selected_hash} hashes")
+	print(f"[+] {selected_hash}-full-list.txt successfully created containing both the {selected_hash} Hash the corresponding string value")
+
+	# write the clear-text list into a file 
+	with open(selected_hash+"-clear-text.txt","w") as f: 
+		for x in number_list: 
+			f.write(x+"\n")
 
 	# write the md5 hash list into a file 
 	with open(selected_hash+"-list.txt","w") as f: 
@@ -149,7 +155,7 @@ try:
 			f.write(i+"\n")
 
 	# write the full-list into a file 
-	with open("full-list.txt","w") as f: 
+	with open(selected_hash+"-full-list.txt","w") as f: 
 		for i,j in full_list.items(): 
 			f.write("{} : {}\n".format(i,j))
 
