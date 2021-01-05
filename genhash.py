@@ -88,6 +88,7 @@ if len(sys.argv) <= 1:
 # Check for --version or -V
 if args.version:
     print("genhash version 1.0")
+	sys.exit()
 
 # display the available hash type 
 if args.list:
