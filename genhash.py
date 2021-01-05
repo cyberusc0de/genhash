@@ -55,13 +55,6 @@ def banner():
 	print("[*] Tool developed by @zidelnet")
 	print("------------------------------------------------------")
 	
-banner()
-print("""
-Sample Example: Generate MD5 Hash wordlist 
-# python genhash.py --hash MD5 --start 1111 --end 9999
-# python genhash.py --hash SHA256 --start 1111 --end 5555
-""")
-
 # Define the program description 
 text = "Generate hashed and plain wordlist to brute-force OTP and password during a web application attack"
 
@@ -87,7 +80,7 @@ if len(sys.argv) <= 1:
 
 # Check for --version or -V
 if args.version:
-    print("genhash version 1.0")
+	print("genhash version 1.0")
 	sys.exit()
 
 # display the available hash type 
@@ -109,6 +102,16 @@ if args.start:
 if args.end: 
 	END_ = args.end 
 
+if START_ > END_: 
+	print("The --start value cannot be greater than the --end value")
+	sys.exit() 
+
+banner()
+print("""
+Sample Example: Generate MD5 Hash wordlist 
+# python genhash.py --hash MD5 --start 1111 --end 9999
+# python genhash.py --hash SHA256 --start 1111 --end 5555
+""")
 
 try: 
 	# generate sequencial numbers 
@@ -148,7 +151,7 @@ try:
 	# write the clear-text list into a file 
 	with open(selected_hash+"-clear-text.txt","w") as f: 
 		for x in number_list: 
-			f.write(x+"\n")
+			f.write(str(x)+"\n")
 
 	# write the md5 hash list into a file 
 	with open(selected_hash+"-list.txt","w") as f: 
