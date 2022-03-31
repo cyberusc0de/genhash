@@ -1,5 +1,5 @@
 ## genhash
-Developed by @zidelnet 
+Developed by @yemilesky 
 
 This tool was designed to test web application using only hashing algorithm in order to brute forcing password during a web application penetration test. It is a good practice to salt user's password before storing them in the database.
 
@@ -7,7 +7,7 @@ It can generate different hashes and plain wordlist to brute-force OTP and passw
 
 NOTE: Ensure to use python3 
 ``` 
-$ git clone https://github.com/zidelnet/genhash.git
+$ git clone https://github.com/yemilesky/genhash.git
 $ cd genhash
 $ python genhash.py -h 
 ```
@@ -22,7 +22,7 @@ $ python genhash.py -h
 
 [*] A tool to generate a hashed wordlist
 [*] such as MD5, SHA1 etc and its corresponding value
-[*] Tool developed by @zidelnet")
+[*] Tool developed by @yemilesky")
 ------------------------------------------------------
 Sample Example: Generate MD5 Hash wordlist 
 $ python genhash.py --hash MD5 --start 1111 --end 9999
