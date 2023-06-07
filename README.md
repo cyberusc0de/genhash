@@ -1,5 +1,5 @@
 ## genhash
-Developed by @yemilesky 
+Developed by @cyeruscode 
 
 This tool was designed to test web application using only hashing algorithm in order to brute forcing password during a web application penetration test. It is a good practice to salt user's password before storing them in the database.
 
@@ -7,7 +7,7 @@ It can generate different hashes and plain wordlist to brute-force OTP and passw
 
 NOTE: Ensure to use python3 
 ``` 
-$ git clone https://github.com/yemilesky/genhash.git
+$ git clone https://github.com/cyberusc0de/genhash.git
 $ cd genhash
 $ python genhash.py -h 
 ```
